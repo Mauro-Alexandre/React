@@ -1,4 +1,5 @@
-type BotaoProps = {
+type BotaoProps = 
+{
     texto: string;
     cor: string;
     corHover?: string;
