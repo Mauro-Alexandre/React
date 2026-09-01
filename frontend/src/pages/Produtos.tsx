@@ -11,6 +11,8 @@ function Produtos()
 {
     const [usuarios, setUsuarios] = useState<Usuario[]>([]);
     const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [edicao, setEdicao] = useState<number | null>(null);
 
     async function buscarUsuarios() 
     {
@@ -22,13 +24,105 @@ function Produtos()
 
         setUsuarios(resultado);
     }
+
+    //Cadastramento Local
+   /* function cadastrarUsuarios()
+    {
+
+        const novoUsuario: Usuario = 
+        {
+            id: Date.now(),
+            name: name,
+            email: email
+        };
+
+        setUsuarios([...usuarios, novoUsuario]);
+        setName("");
+        setEmail("");
+    } */
+
+        async function cadastrarUsuarios()
+        {
+            const resposta = await fetch("https://jsonplaceholder.typicode.com/users", 
+            {
+                method: "POST",
+                headers: {"Content-Type": "aplication/json"},
+                body: JSON.stringify
+                ({
+                    name: name,
+                    email: email
+                })
+            });
+
+            const novoUsuario = await resposta.json();
+            setUsuarios([...usuarios, novoUsuario]);
+            setName("");
+            setEmail("");
+        }
+
+    function editarUsuarios(id: number)
+    {
+        const usuario = usuarios.find((usuario => usuario.id === id));
+        if (usuario) 
+        {    
+            setName(usuario.name);
+            setEmail(usuario.email);
+            setEdicao(id);
+        }
+    }
+
+    /*function salvarEdicao()
+    {
+        setUsuarios
+        (
+            usuarios.map((usuario) => 
+            {
+                if (usuario.id === edicao)
+                {
+                    return {
+                        ...usuario,
+                        name: name,
+                        email: email
+                    }
+                }
+                
+                return usuario;
+            }),
+        );
+
+        setEdicao(null);
+        setName("");
+        setEmail("");
+    } */
+
+    function salvarEdicao()
+    {
+        const resposta = await fetch(`https://jsonplaceholder.typicode.com/users`, 
+        {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify
+            ({
+                name: name,
+                email: email,
+            }),
+        });
+    }
+
+    function deletarUsuarios(id: number)
+    {
+        const usuariosAtualizados = usuarios.filter((usuario) => usuario.id !== id)
+
+        setUsuarios(usuariosAtualizados);
+    }
     
     return (
         <main className="max-w-5x1 mx-auto p-6">
-            <h1 className="mb-6 text-4x1 font-bold mb-6 text-blue-900">
+            <h1 className="mb-6 text-4x1 font-bold text-blue-900">
                 {" "}
                 Pesquisar Usuários
             </h1>
+
             <div>
                 <input 
                     type="text" 
@@ -37,18 +131,49 @@ function Produtos()
                     onChange={(e) => setName(e.target.value)} 
                     className="border rounded-lg p-3 w-full mb-3"
                 />
-                <button className="rounded-lg bg-blue-500 px-4 py-2 text-white" onClick={buscarUsuarios}>
-                    Buscar Usuários
-                </button>
+
+                <input 
+                    type="email" 
+                    placeholder="Digite um email..." 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="mb-3 w-full rounded-lg border p-3"
+                />
+
+                <div className="flex gap-2">
+                    <button className="cursor-pointer rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600" onClick={buscarUsuarios}>
+                        Buscar 
+                    </button>
+                    
+                    <button className={`cursor-pointer rounded-lg bg-green-500 px-4 py-2 text-white ${edicao === null 
+                        ? "bg-green-500 hover:bg-green-600"
+                        : "bg-yellow-500 hover:bg-yellow-600"}`} 
+                        onClick={edicao === null ? cadastrarUsuarios : salvarEdicao}>
+                        {edicao === null ? "Cadastrar" : "Salvar edição"}
+                    </button>
+                </div>
+
                 <div className="space-y-4 mt-6"> 
                     {usuarios.length === 0 ? 
                     (
                         <p className="text-gray-500">Nenhum usuário encontrado.</p>
-                    ) : (
-                        usuarios.map((usuario) => (
-                            <div key={usuario.id} className="rounded-lg border p-4 shadow-md hover:shadow-lg transition-shadow">
-                                <h2 className="text-xl font-semibold text-blue-900">{usuario.name}</h2>
-                                <p className="text-gray-700">{usuario.email}</p>
+                    ) 
+                    : 
+                    (
+                        usuarios.map((usuario) => 
+                        (
+                            <div key={usuario.id} className="rounded-lg border p-4">
+                                <h2 className="text-xl font-bold">{usuario.name}</h2>
+                                <p className="text-gray-600">{usuario.email}</p>
+                                <div className="mt-2 flex gap-2">
+                                    <button className="cursor-pointer rounded-lg bg-yellow-500 px-4 py-2 text-white hover:bg-yellow-600" onClick={() => editarUsuarios(usuario.id)}>
+                                        Editar
+                                 </button>
+
+                                 <button className="cursor-pointer rounded-lg bg-red-500 px-4 py-2 text-white hover:bg-red-600" onClick={() => deletarUsuarios(usuario.id)}>
+                                        Deletar
+                                    </button>
+                                </div>
                             </div>
                         ))                     
                     )}
