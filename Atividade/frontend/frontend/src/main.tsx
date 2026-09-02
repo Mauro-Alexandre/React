@@ -5,7 +5,6 @@ import Home from "./assets/home";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Header />
     <Home />
   </StrictMode>,
 );
