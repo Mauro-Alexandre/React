@@ -41,24 +41,24 @@ function Produtos()
         setEmail("");
     } */
 
-        async function cadastrarUsuarios()
+    async function cadastrarUsuarios()
+    {
+        const resposta = await fetch(`https://jsonplaceholder.typicode.com/users?name_like=${edicao}`, 
         {
-            const resposta = await fetch("https://jsonplaceholder.typicode.com/users", 
-            {
-                method: "POST",
-                headers: {"Content-Type": "aplication/json"},
-                body: JSON.stringify
-                ({
-                    name: name,
-                    email: email
-                })
-            });
+            method: "POST",
+            headers: {"Content-Type": "aplication/json"},
+            body: JSON.stringify
+            ({
+                name: name,
+                email: email
+            })
+        });
 
-            const novoUsuario = await resposta.json();
-            setUsuarios([...usuarios, novoUsuario]);
-            setName("");
-            setEmail("");
-        }
+        const novoUsuario = await resposta.json();
+        setUsuarios([...usuarios, novoUsuario]);
+        setName("");
+        setEmail("");
+    }
 
     function editarUsuarios(id: number)
     {
@@ -95,11 +95,11 @@ function Produtos()
         setEmail("");
     } */
 
-    function salvarEdicao()
+    async function salvarEdicao()
     {
-        const resposta = await fetch(`https://jsonplaceholder.typicode.com/users`, 
+        const resposta = await fetch(`https://jsonplaceholder.typicode.com/users?name_like=${edicao}`,
         {
-            method: "POST",
+            method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify
             ({
@@ -107,13 +107,36 @@ function Produtos()
                 email: email,
             }),
         });
+
+        const usuarioAtualizado = await resposta.json();
+        setUsuarios
+        (
+            usuarios.map((usuario) => 
+            (
+                usuario.id === edicao ? usuarioAtualizado: usuario
+            )
+        ));
+
+        setEdicao(null);
+        setName("");
+        setEmail("");
     }
 
-    function deletarUsuarios(id: number)
+    /*function deletarUsuarios(id: number)
     {
         const usuariosAtualizados = usuarios.filter((usuario) => usuario.id !== id)
 
         setUsuarios(usuariosAtualizados);
+    }*/
+
+    async function deletarUsuarios(id: number)
+    {
+        await fetch(`https://jsonplaceholder.typicode.com/users?name_like=${id}`, 
+        {
+            method: "DELETE",
+        });
+
+        setUsuarios(usuarios.filter((usuario) => usuario.id !== id))
     }
     
     return (
@@ -168,9 +191,9 @@ function Produtos()
                                 <div className="mt-2 flex gap-2">
                                     <button className="cursor-pointer rounded-lg bg-yellow-500 px-4 py-2 text-white hover:bg-yellow-600" onClick={() => editarUsuarios(usuario.id)}>
                                         Editar
-                                 </button>
+                                    </button>
 
-                                 <button className="cursor-pointer rounded-lg bg-red-500 px-4 py-2 text-white hover:bg-red-600" onClick={() => deletarUsuarios(usuario.id)}>
+                                    <button className="cursor-pointer rounded-lg bg-red-500 px-4 py-2 text-white hover:bg-red-600" onClick={() => deletarUsuarios(usuario.id)}>
                                         Deletar
                                     </button>
                                 </div>
