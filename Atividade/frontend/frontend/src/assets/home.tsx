@@ -7,7 +7,7 @@ function Home()
 
         <main>
             <Header />
-            <div className="contaniner">
+            {/* <div className="contaniner">
                 <div className="apresentacao">
                     <h2>Bem-vindo ao GameZone!</h2>
 
@@ -43,7 +43,7 @@ function Home()
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer /> */}
         </main>
     )
 }
