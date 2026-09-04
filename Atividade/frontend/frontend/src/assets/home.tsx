@@ -1,5 +1,4 @@
 import Header from "./header";
-import Footer from "./footer";
 
 function Home()
 {
@@ -7,10 +6,16 @@ function Home()
 
         <main>
             <Header />
+<<<<<<< HEAD
 
             <div>
                 <div className="">
                     <h1 className="">Bem-vindo ao GameZone!</h1>
+=======
+            {/* <div className="contaniner">
+                <div className="apresentacao">
+                    <h2>Bem-vindo ao GameZone!</h2>
+>>>>>>> f1cd82f2b1af071199528fdcc427115c98346917
 
                     <p>Aqui você encontra uma seleção especial de jogos incríveis para todos os gostos.</p>
 
@@ -44,8 +49,12 @@ function Home()
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
 
             <Footer />
+=======
+            <Footer /> */}
+>>>>>>> f1cd82f2b1af071199528fdcc427115c98346917
         </main>
     )
 }
