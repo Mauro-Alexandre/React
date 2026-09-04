@@ -23,7 +23,7 @@ function Contato()
 
                 if(!resposta.ok)
                 {
-                    throw new Error("Erro ao buscar contato");
+                    throw new Error("Error ao buscar contato");
                 }
 
                 const dados = await resposta.json();
