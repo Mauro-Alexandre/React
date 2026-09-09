@@ -3,7 +3,7 @@ import Botao from "../components/Botao";
 function Home()
 {
     return (
-        <main className="flex min-h-screen items-center justify-center bg-amber-400">
+        <main className="flex min-h-screen items-center justify-center ">
         <div className="rounded-xl bg-amber-50 p-8 shadow-lg">
             <h1 className="text-5x1 text-center font-bold text-blue-800">
             Hello World!
