@@ -2,9 +2,9 @@ function Footer()
 {
     return (
     
-        <footer className=" bg-[#160429]">
-            <div className="">
-                <div className="">
+        <footer className="">
+            <div className="bg-[#160429]">
+                <div className="bg-[#160429]">
                     <h2>GameZone</h2>
                     <img className="" src="src/assets/games.png" alt="Logo" />
                 </div>
