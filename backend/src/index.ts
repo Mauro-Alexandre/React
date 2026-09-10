@@ -10,19 +10,19 @@ app.use(cors());
 //Aceitar JSON no corpo da requisição
 app.use(express.json());
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 //Registros de req HTTP do morgan
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 //Cabeçalho de segurança helmet
 app.use(helmet());
 
 const contatos =
 [
-  { id: 1, nome: "Mauro", email: "mauro@teste.com"},
-  { id: 2, nome: "Samuel", email: "samuel@teste.com"},
-  { id: 3, nome: "Yan", email: "yane@teste.com"},
+  { id: 1, name: "Mauro", email: "mauro@teste.com"},
+  { id: 2, name: "Samuel", email: "samuel@teste.com"},
+  { id: 3, name: "Yan", email: "yan@teste.com"},
 ]
 
 app.get('/', (req: Request, res: Response) => {
@@ -87,6 +87,26 @@ app.put("/api/contatos/:id", (req: Request, res: Response) =>
 
   return res.json(contatoAtualizado);
 })
+
+//DELETE: Requisição para deletar um contato existente
+app.delete("/api/contatos/:id", (req: Request, res: Response) => 
+{
+  const id = Number(req.params.id);
+  const index = contatos.findIndex((c) => c.id === id);
+
+  if(index === -1)
+  {
+    return res.status(404).json
+    ({
+      erro: "Contato não encontrado",
+    });
+  }
+
+  contatos.splice(index,1);
+
+  //Retorna (No Content) para indicar que a exclusão foi bem-sucedida, mas não há conteúdo para retornar
+  return res.status(204).send();
+});
 
 app.listen(port, () => {
   console.log(`Servidor iniciado em http://localhost:${port}`);
