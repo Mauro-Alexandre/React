@@ -1,10 +1,23 @@
 import Header from "./header";
-import Footer from "./footer";
+
 
 function Home()
 {
     return (
-        <Footer />
+      
+        <main>
+             <Header />
+             
+             <div>
+                <div>
+                    <div className="min-h-200">
+                        
+                                  
+                    </div>
+                </div>
+             </div>
+        </main>
+       
     )
 }
 

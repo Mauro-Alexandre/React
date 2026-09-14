@@ -1,12 +1,12 @@
 function Footer()
 {
     return (
-    
-        <footer className="">
-            <div className="bg-[#160429]">
-                <div className="bg-[#160429]">
+
+        <footer className="text-white bg-[#160429]">
+            <div>
+                <div>
                     <h2>GameZone</h2>
-                    <img className="" src="src/assets/games.png" alt="Logo" />
+                    <img className="w-7 gap-2" src="src/assets/games.png" alt="Logo" />
                 </div>
             </div>
             <div className="">

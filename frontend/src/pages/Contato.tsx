@@ -261,7 +261,6 @@ export default function Contatos()
                             </div>
                         </li>
                     ))}
-
                 </ul>
             )}
         </div>
