@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import morgan from 'morgan';
 import helmet from 'helmet';
+import { Pool } from 'pg';
 
 const app: Express = express();
 app.use(cors());
