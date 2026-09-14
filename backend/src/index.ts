@@ -13,6 +13,29 @@ app.use(express.json());
 
 const port = process.env.PORT || 3000;
 
+export const pool = new Pool
+({
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+})
+
+async function testarBanco() 
+{
+  try 
+  {
+    const result = await pool.query('SELECT * FROM contatos')
+
+    console.log("Banco de dados conectado", result.rows);
+  } 
+  catch (error) 
+  {
+    console.error('Erro ao conectar com a BD: ', error);
+  }
+}
+
 //Registros de req HTTP do morgan
 app.use(morgan("dev"));
 
@@ -31,8 +54,18 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 //GET: Requisição para buscar contatos
-app.get('/api/contatos', (req: Request, res: Response) => {
-    res.json(contatos);
+app.get("/api/contatos", async (req: Request, res: Response) => 
+{
+  try 
+  {
+    const result = await prisma.contato.findMany();
+    res.json(result);
+  } 
+  catch (error) 
+  {
+    console.error('Erro ao conectar com o BD: ', error);
+    res.status(500).json({error: "Erro interno no servidor"});
+  }
 });
 
 //POST: Requisição para adicionar um novo contato
@@ -111,4 +144,6 @@ app.delete("/api/contatos/:id", (req: Request, res: Response) =>
 
 app.listen(port, () => {
   console.log(`Servidor iniciado em http://localhost:${port}`);
+
+  testarBanco();
 });
