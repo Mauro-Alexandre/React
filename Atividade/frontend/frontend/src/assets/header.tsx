@@ -30,7 +30,7 @@ function Header()
                         hover:duration-190
                         hover:underline
                         hover:underline-offset-20"
-                        href="/games">Catálogo
+                        href="../jogos">Catálogo
                     </a>
                 </li>
                 <li>
@@ -42,7 +42,7 @@ function Header()
                         hover:duration-190
                         hover:underline
                         hover:underline-offset-20" 
-                        href="/about">Sobre mim
+                        href="../perfil">Sobre mim
                     </a>
                 </li>
             </nav>

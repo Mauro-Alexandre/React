@@ -3,28 +3,53 @@ function Footer()
     return (
 
         <footer className="text-white bg-[#160429]">
-            <div>
+            <div className="flex gap-125 p-5 mb-6 border-b-[0.1px]">
                 <div>
-                    <h2>GameZone</h2>
-                    <img className="w-7 gap-2" src="src/assets/games.png" alt="Logo" />
+                    <div className="flex gap-2 ml-10">
+                        <img className="w-7" src="src/assets/games.png" alt="Logo" />
+                        <h2 className="text-2xl text-[rgb(106,106,250)] font-['Franklin_Gothic_Medium','Arial_Narrow',Arial,sans-serif]">GameZone</h2>
+                    </div>
+                </div>
+                
+                <div className="list-none">
+                    <h3 className="mb-3 font-semibold">Navegação</h3>
+                    <nav >
+                        <li className="mb-1">
+                        <a className="hover:text-[rgb(106,106,250)] 
+                            hover:transition-delay 
+                            hover:transition 
+                            hover:duration-190"
+                            href="/">Início</a>
+                        </li>
+                        
+                        <li className="mb-1">
+                            <a className="hover:text-[rgb(106,106,250)] 
+                            hover:transition-delay 
+                            hover:transition 
+                            hover:duration-190"
+                            href="/games">Catálogo</a>
+                        </li>
+
+                        <li>
+                            <a className="hover:text-[rgb(106,106,250)] 
+                            hover:transition-delay 
+                            hover:transition 
+                            hover:duration-190"
+                            href="/about">Sobre mim</a>
+                        </li>
+                    </nav>
+                </div>
+                <div className="list-none">
+                    <h3 className="mb-3 font-semibold">Contato</h3>
+                    
+                    <nav>
+                        <li className="mb-1">Email: Contato@gamezone.com</li>
+                        <li>Brasil</li>
+                    </nav>
                 </div>
             </div>
-            <div className="">
-                <h3>Navegação</h3>
-                <nav>
-                    <li><a href="/">Início</a></li>
-                    <li><a href="/games">Catálogo</a></li>
-                    <li><a href="/about">Sobre mim</a></li>
-                </nav>
-            </div>
-            <div className="">
-                <h3>Contato</h3>
-
-                <p>Email: contato@gamezone.com</p>
-                <p>Brasil</p>
-            </div>
-
-            <p>© 2026 GameZone. Todos os direitos reservados.</p>
+            
+            <p className="text-center">© 2026 GameZone. Todos os direitos reservados.</p>
 
         </footer>
     )
