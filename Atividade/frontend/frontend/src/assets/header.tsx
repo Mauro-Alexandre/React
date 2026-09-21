@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 function Header() 
 {
  
@@ -10,7 +12,7 @@ function Header()
             
             <nav className="flex list-none gap-22 mr-25 decoration-2 font-['Arial',Helvetica,sans-serif]">
                 <li> 
-                    <a className="text-white 
+                    <Link className="text-white 
                         text-xl 
                         hover:text-[rgb(106,106,250)] 
                         hover:transition-delay 
@@ -18,11 +20,11 @@ function Header()
                         hover:duration-190  
                         hover:underline
                         hover:underline-offset-20" 
-                        href="/">Início
-                    </a>
+                        to={"/"}>Início
+                    </Link>
                 </li>
                 <li>
-                    <a className="text-white 
+                    <Link className="text-white 
                         text-xl 
                         hover:text-[rgb(106,106,250)] 
                         hover:transition-delay 
@@ -30,8 +32,8 @@ function Header()
                         hover:duration-190
                         hover:underline
                         hover:underline-offset-20"
-                        href="../jogos">Catálogo
-                    </a>
+                        to={"/jogos"}>Catálogo
+                    </Link>
                 </li>
                 <li>
                     <a className="text-white 
