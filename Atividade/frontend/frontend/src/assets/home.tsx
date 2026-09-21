@@ -36,7 +36,7 @@ function Home()
             <h1 className="text-center font-bold text-3xl">Destaques do catálogo</h1>
 
             <div className="flex gap-20 p-13 m-5 bg-cyan-100 rounded-3xl">
-                <div>
+                <div className="transition-[scale] hover:scale-105">
                     <img src="/src/assets/minecraft.jfif" alt="minecraft" className="w-90 h-80 object-cover object-top rounded-3xl mb-5 "/>
 
                     <h2 className="text-2xl font-bold">Minecraft</h2>
@@ -44,7 +44,7 @@ function Home()
                     <p>Explore mundos infinitos  e construa o que imaginar.</p>
                 </div>
 
-                <div>
+                <div className="transition-[scale] hover:scale-105">
                     <img src="src/assets/stardew.png" alt="stardew" className="w-90 h-80 object-cover object-top rounded-3xl mb-5"/>
 
                     <h2 className="text-2xl font-bold">Stardew Valley</h2>
@@ -52,7 +52,7 @@ function Home()
                     <p>Viva uma vida tranquila no campo e cuide da sua fazenda.</p>
                 </div>
 
-                <div>
+                <div className="transition-[scale] hover:scale-105">
                     <img src="src/assets/hk.webp" alt="hk" className="w-90 h-80 object-cover object-top rounded-3xl mb-5"/>
 
                     <h2 className="text-2xl font-bold">Hollow Knight</h2>
@@ -60,7 +60,7 @@ function Home()
                     <p>Explore um reino sombrio cheio de mistérios e desafios.</p>
                 </div>
 
-                <div>
+                <div className="transition-[scale] hover:scale-105">
                     <img src="src/assets/mk.jpg" alt="mk" className="w-90 h-80 object-cover object-top rounded-3xl mb-5"/>
 
                     <h2 className="text-2xl font-bold">Mario Kart 8 Deluxe</h2>
