@@ -1,20 +1,23 @@
-import{ Link, Routes, Route} from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./home";
-import Jogos from "../assets/jogos";
+import Jogos from "./jogos";
 
-function app() 
-{
+function App() {
   return (
-    <main >
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/jogos" element={<Jogos />} />
-        </Routes>
-      </div>
-    </main>
+    <Router>
+      <main>
+        <div>
+          
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/jogos" element={<Jogos />} />
+          </Routes>
+        </div>
+      </main>
+    </Router>
   );
 }
 
-export default app;
+export default App;
