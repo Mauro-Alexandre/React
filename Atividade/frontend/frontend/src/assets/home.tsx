@@ -1,4 +1,5 @@
 import Header from "./header";
+import Footer from "./footer";
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -110,6 +111,9 @@ function Home() {
           </button>
         </Link>
       </div>
+
+      <Footer />
+
     </main>
   );
 }

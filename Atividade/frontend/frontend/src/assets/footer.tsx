@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer()
 {
     return (
@@ -15,27 +17,30 @@ function Footer()
                     <h3 className="mb-3 font-semibold">Navegação</h3>
                     <nav >
                         <li className="mb-1">
-                        <a className="hover:text-[rgb(106,106,250)] 
-                            hover:transition-delay 
-                            hover:transition 
-                            hover:duration-190"
-                            href="/">Início</a>
+                            <Link className="hover:text-[rgb(106,106,250)] 
+                                hover:transition-delay 
+                                hover:transition 
+                                hover:duration-190"
+                                to = {"/home"}>Início
+                            </Link>
                         </li>
                         
                         <li className="mb-1">
-                            <a className="hover:text-[rgb(106,106,250)] 
-                            hover:transition-delay 
-                            hover:transition 
-                            hover:duration-190"
-                            href="/games">Catálogo</a>
+                            <Link className="hover:text-[rgb(106,106,250)] 
+                                hover:transition-delay 
+                                hover:transition 
+                                hover:duration-190"
+                                to = {"/jogos"}>Catálogo
+                            </Link>
                         </li>
 
                         <li>
-                            <a className="hover:text-[rgb(106,106,250)] 
-                            hover:transition-delay 
-                            hover:transition 
-                            hover:duration-190"
-                            href="/about">Sobre mim</a>
+                            <Link className="hover:text-[rgb(106,106,250)] 
+                                hover:transition-delay 
+                                hover:transition 
+                                hover:duration-190"
+                                to = {"/perfil"}>Sobre mim
+                            </Link>
                         </li>
                     </nav>
                 </div>
