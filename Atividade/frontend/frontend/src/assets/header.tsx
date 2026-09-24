@@ -51,7 +51,7 @@ function Header() {
             hover:duration-190
             hover:underline
             hover:underline-offset-20"
-            to={"/"}>
+            to={"/perfil"}>
             Sobre mim
           </Link>
         </li>
