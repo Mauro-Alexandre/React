@@ -54,7 +54,8 @@ function Footer()
                 </div>
             </div>
             
-            <p className="text-center">© 2026 GameZone. Todos os direitos reservados.</p>
+            <p className="text-center flex justify-center mt">© 2026 GameZone. Todos os direitos reservados. </p>
+            <br />
 
         </footer>
     )

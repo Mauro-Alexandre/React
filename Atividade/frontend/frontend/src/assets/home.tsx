@@ -40,7 +40,7 @@ function Home() {
         </div>
 
         <div>
-          <img src="/src/assets/PC.png" alt="PC" className="w-250" />
+          <img src="/src/assets/PC.png" alt="PC" className="w-250 ml-45 mb-10" />
         </div>
       </div>
 
@@ -51,7 +51,7 @@ function Home() {
           <img
             src="/src/assets/minecraft.jfif"
             alt="minecraft"
-            className="w-90 h-80 object-cover object-top rounded-3xl mb-5 "
+            className="w-90 h-80 object-cover object-top rounded-3xl mb-5"
           />
 
           <h2 className="text-2xl font-bold">Minecraft</h2>
