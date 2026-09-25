@@ -15,7 +15,7 @@ function Jogos()
                 <p className="text-2xl flex justify-center mt-5">Confira alguns jogos disponíveis em nosso catálogo.</p>
             </div>
 
-            <div className="flex gap-40 p-10 m-5 mb-15   bg-cyan-100 rounded-2xl">
+            <div className="flex gap-40 p-10 m-5 mb-15 bg-blue-50 rounded-2xl">
                 <div>
                     <img src="/src/assets/minecraft.jfif" alt="minecraft" className="w-80 h-80 object-cover object-top rounded-3xl mb-5 "/>
 

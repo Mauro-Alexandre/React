@@ -7,7 +7,7 @@ function Home() {
     <main className="min-h-200">
       <Header />
 
-      <div className="flex mb-10">
+      <div className="flex mb-10 bg-cyan-100 round">
         <div className="p-30">
           <h1 className="text-6xl font-bold">Bem-vindo ao</h1>{" "}
           <h1 className="text-8xl text-[rgb(71,71,236)] font-['Franklin_Gothic_Medium','Arial_Narrow',Arial,sans-serif]">
@@ -46,8 +46,8 @@ function Home() {
 
       <h1 className="text-center font-bold text-3xl">Destaques do catálogo</h1>
 
-      <div className="flex gap-20 p-13 m-5 bg-cyan-100 rounded-3xl">
-        <div className="transition-[scale] hover:scale-105">
+      <div className="flex gap-15 p-13 m-5">
+        <div className="transition-[scale] hover:scale-105  bg-blue-50 rounded-3xl p-5">
           <img
             src="/src/assets/minecraft.jfif"
             alt="minecraft"
@@ -61,7 +61,7 @@ function Home() {
           <p>Explore mundos infinitos e construa o que imaginar.</p>
         </div>
 
-        <div className="transition-[scale] hover:scale-105">
+        <div className="transition-[scale] hover:scale-105 bg-blue-50 rounded-3xl p-5">
           <img
             src="src/assets/stardew.png"
             alt="stardew"
@@ -75,7 +75,7 @@ function Home() {
           <p>Viva uma vida tranquila no campo e cuide da sua fazenda.</p>
         </div>
 
-        <div className="transition-[scale] hover:scale-105">
+        <div className="transition-[scale] hover:scale-105 bg-blue-50 rounded-3xl p-5">
           <img
             src="src/assets/hk.webp"
             alt="hk"
@@ -89,7 +89,7 @@ function Home() {
           <p>Explore um reino sombrio cheio de mistérios e desafios.</p>
         </div>
 
-        <div className="transition-[scale] hover:scale-105">
+        <div className="transition-[scale] hover:scale-105 bg-blue-50 rounded-3xl p-5">
           <img
             src="src/assets/mk.jpg"
             alt="mk"
