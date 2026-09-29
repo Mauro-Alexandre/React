@@ -6,8 +6,8 @@ function Perfil()
     return (
         <main>
             <Header/>
-            <div className="flex p-20">
-                <img src="" alt="" />
+            <div className="flex p-20 gap-70">
+                <img src="./src/assets/foto.png" alt="foto de perfil" className="h-100 ml-20"/>
 
                 <div>
                     <h1 className="font-bold text-5xl mb-5">Sobre mim</h1>
@@ -25,7 +25,7 @@ function Perfil()
             </div>
 
             <div className="flex gap-50 m-15 p-15">
-                <div className="">
+                <div className="border-2 w-80 h-50">
                     <img src="" alt="" />
                     <h2>Gamer</h2>
                     
