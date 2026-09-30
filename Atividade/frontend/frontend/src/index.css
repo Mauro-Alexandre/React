@@ -1,1 +1,158 @@
 @import "tailwindcss";
+
+@media (max-width: 1023px) {
+	header.flex {
+		height: auto;
+		min-height: 5rem;
+		flex-wrap: wrap;
+		gap: 1rem;
+		padding: 1rem;
+	}
+
+	header > div:first-child {
+		margin-left: 0;
+	}
+
+	header nav.flex {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem 1.5rem;
+		margin-right: 0;
+	}
+
+	main > header + div[class~="round"] {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1.5rem;
+	}
+
+	main > header + div[class~="round"] > div:first-child {
+		padding: clamp(1.5rem, 5vw, 3rem);
+	}
+
+	main > header + div[class~="round"] > div:first-child h1:first-child {
+		font-size: clamp(2.25rem, 7vw, 3.75rem);
+		line-height: 1.1;
+	}
+
+	main > header + div[class~="round"] > div:first-child h1:nth-of-type(2) {
+		font-size: clamp(3rem, 9vw, 5rem);
+		line-height: 1.1;
+	}
+
+	main > header + div[class~="round"] > div:first-child p {
+		font-size: clamp(1.125rem, 3vw, 1.5rem);
+	}
+
+	main > header + div[class~="round"] > div:last-child {
+		width: 100%;
+		padding: 0 1.5rem 1.5rem;
+	}
+
+	main > header + div[class~="round"] img {
+		width: 100%;
+		max-width: 40rem;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	main > header + div[class~="round"] button {
+		width: min(100%, 15rem);
+		max-width: 100%;
+	}
+
+	main > h1 + div[class~="flex"] {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5rem;
+		margin: 1.25rem;
+		padding: 1.25rem;
+	}
+
+	main > h1 + div[class~="flex"] > div {
+		min-width: 0;
+	}
+
+	main > h1 + div[class~="flex"] img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 9 / 8;
+	}
+
+	main > div[class~="gap-40"] {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 2rem;
+		margin: 1.25rem;
+		padding: 1.5rem;
+	}
+
+	main > div[class~="gap-40"] > div {
+		min-width: 0;
+	}
+
+	main > div[class~="gap-40"] img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1;
+	}
+
+	main > div[class~="gap-40"] p[class~="w-54"],
+	main > div[class~="gap-40"] p[class~="w-56"],
+	main > div[class~="gap-40"] p[class~="w-52"] {
+		width: auto;
+	}
+
+	main > div[class~="gap-40"] button {
+		width: 100%;
+	}
+
+	main > header + div:has(> img[src="./src/assets/foto.png"]) {
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		padding: clamp(1.5rem, 5vw, 3rem);
+	}
+
+	main > header + div:has(> img[src="./src/assets/foto.png"]) > img {
+		width: min(100%, 25rem);
+		height: auto;
+		margin-left: 0;
+	}
+
+	main > header + div:has(> img[src="./src/assets/foto.png"]) > div,
+	main > header + div:has(> img[src="./src/assets/foto.png"]) p {
+		width: 100%;
+	}
+
+	main > div[class~="gap-50"] {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5rem;
+		margin: 1.5rem;
+		padding: 1.5rem;
+	}
+
+	footer > div:first-child {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5rem;
+		padding: 1.5rem;
+	}
+
+	footer > div:first-child > div:first-child {
+		grid-column: 1 / -1;
+	}
+
+	footer > div:first-child > div:first-child > div {
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 599px) {
+	main > h1 + div[class~="flex"],
+	main > div[class~="gap-40"],
+	main > div[class~="gap-50"] {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}

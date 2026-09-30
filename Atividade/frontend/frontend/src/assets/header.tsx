@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header() 
+{
   return (
     <header className="flex justify-between items-center p-4 bg-[#160429] text-white w-full m-0 h-20 z-10">
       <div className="flex items-center gap-2 ml-10">
@@ -12,8 +13,7 @@ function Header() {
 
       <nav className="flex list-none gap-22 mr-25 decoration-2 font-['Arial',Helvetica,sans-serif]">
         <li>
-          <Link
-            className="text-white 
+          <Link className="text-white 
             text-xl 
             hover:text-[rgb(106,106,250)] 
             hover:transition-delay 
@@ -21,14 +21,13 @@ function Header() {
             hover:duration-190  
             hover:underline
             hover:underline-offset-20"
-           to={"/"}>
+            to={"/"}>
             Início
           </Link>
         </li>
 
         <li>
-          <Link
-            className="text-white 
+          <Link className="text-white 
             text-xl 
             hover:text-[rgb(106,106,250)] 
             hover:transition-delay 
@@ -42,8 +41,7 @@ function Header() {
         </li>
 
         <li>
-          <Link
-            className="text-white 
+          <Link className="text-white 
             text-xl
             hover:text-[rgb(106,106,250)] 
             hover:transition-delay 
@@ -55,7 +53,6 @@ function Header() {
             Sobre mim
           </Link>
         </li>
-        
       </nav>
     </header>
   );
